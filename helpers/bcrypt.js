@@ -5,7 +5,7 @@ const hash = password => {
 }
 
 const compare = (pass, hashPass) => {
-    return bcrypt.compareSync(password, hashPass)
+    return bcrypt.compareSync(pass, hashPass)
 }
 
 module.exports = {

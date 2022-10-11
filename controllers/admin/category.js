@@ -15,6 +15,7 @@ module.exports = {
       getCategory: async (req, res) => {
         try {
             const categories = await Category.find()
+            console.log(categories)
             res.status(200).json({categories})
         } catch (error) {
             res.status(404).json(error.message)

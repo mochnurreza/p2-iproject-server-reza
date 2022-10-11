@@ -1,22 +1,26 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
+const {hash} = require('../helpers/bcrypt')
 
 const userSchema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: true
-    },
-    LastName: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    phoneNumber: {
-        type: String,
-        required: true
-    }
-})
+  username: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+});
 
-module.exports = mongoose.model('User', userSchema)
+userSchema.pre('save', function(next){
+   if(this.isModified('password')){
+      this.password = hash(this.password)
+   }
+    return next(null, this);
+} )
+
+module.exports = mongoose.model("User", userSchema);

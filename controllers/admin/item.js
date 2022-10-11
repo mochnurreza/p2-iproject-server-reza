@@ -2,7 +2,7 @@ const Item = require("../../models/item");
 const Category = require("../../models/category");
 const Image = require('../../models/image')
 const Feature = require('../../models/feature')
-const activity = require('../../moelds/activity')
+const activity = require('../../models/activity')
 
 module.exports = {
   addItem: async (req, res) => {

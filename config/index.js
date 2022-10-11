@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI: 'mongodb://127.0.0.1:27017/iProject'
+    mongoURI: 'mongodb+srv://hacktiv8:fullstack@hacktiv8.jq7vqwy.mongodb.net/?retryWrites=true&w=majority'
 }
