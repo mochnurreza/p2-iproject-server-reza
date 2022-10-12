@@ -26,6 +26,6 @@ const app = express()
             console.log(`app listening on port ${port}`)
         })
 }).catch(err => {
-    console.log(err)
+    throw{message: 'cannot connect with mongoDB'}
 })
 

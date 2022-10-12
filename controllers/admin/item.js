@@ -29,6 +29,7 @@ module.exports = {
       }
       res.status(201).json({message: 'item has been created'})
     } catch (error) {
+      console.log(error)
         res.status(401).json(error)
     }
   },
